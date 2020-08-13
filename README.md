@@ -53,7 +53,7 @@ Body Request:
     "longitude": -50.7587
 }
 
-Body Response:
+RESPONSE:
 
 {
     "name": "WAL-MART PHARMACY",
