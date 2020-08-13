@@ -22,6 +22,4 @@ app.use(express.json());
 //Route Middlewares
 app.use('/api/pharmacy', pharmacyRoute);
 
-
-
 app.listen(3000, () => console.log('Server is running!'));

@@ -6,16 +6,11 @@ const getNearest = async(req, res) => {
     const { error } = getDistanceValidation(req.body);
     if (error) return res.status(400).send(error.details[0].message)
 
-    const {
-        latitude,
-        longitude
-    } = req.body;
-
     const pharmacies = await Pharmacy.find();
 
     const startLoc = {
-        longitude: Number(longitude),
-        latitude: Number(latitude)
+        longitude: Number(req.body.longitude),
+        latitude: Number(req.body.latitude)
     }
 
     const nearPharm = nearestPharmacy(startLoc, pharmacies);
@@ -32,6 +27,5 @@ const getNearest = async(req, res) => {
 
     res.status(200).send(response);
 }
-
 
 module.exports.getNearest = getNearest;
