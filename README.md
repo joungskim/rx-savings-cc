@@ -20,7 +20,7 @@ OPTION 2: If you would like to seed your own database.  Setup a free mongodb acc
 
 Step 1 - Place connection string in .env file: 
 
-CONNECTDB = <YOUR CONNECTION STRING>
+CONNECTDB = "YOUR CONNECTION STRING"
 
 Step 2 - Run script with "npm run dbseed"  Example Below:
 
