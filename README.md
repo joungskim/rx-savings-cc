@@ -11,6 +11,7 @@ npm install
 ### SETTING UP DATABASE:
 
 Note: ask me directly to use my pre-seeded Database, contact me here: https://joungskim.github.io/my-portfolio/
+
 OPTION 1: copy and paste the snippit below into the .env file.  This has read-only access.
 
 CONNECTDB = <Not available on github>
