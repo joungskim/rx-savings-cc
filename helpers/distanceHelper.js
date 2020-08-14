@@ -3,8 +3,8 @@ const MILES_TO_NAUTICAL_MILES = 0.8684;
 
 //returns destructured pharmacy object for lat/long
 const getPoint = (pharmacy) => {
-    return { latitude: pharmacy.latitude, longitude: pharmacy.longitude }
-}
+    return { latitude: pharmacy.latitude, longitude: pharmacy.longitude };
+};
 
 // Returns distance of two points.  Must be Long/Lat Objects. 
 // Got logic from https://www.geodatasource.com/developers/javascript
@@ -28,18 +28,18 @@ const getDistance = (start, end, unit) => {
         dist = Math.acos(dist);
         dist = dist * 180 / Math.PI;
         dist = dist * 60 * 1.1515;
-        if (unit == "K") { dist = dist * MILES_TO_KILOMETERS }
-        if (unit == "N") { dist = dist * MILES_TO_NAUTICAL_MILES }
+        if (unit == "K") { dist = dist * MILES_TO_KILOMETERS };
+        if (unit == "N") { dist = dist * MILES_TO_NAUTICAL_MILES };
         return dist;
     }
-}
+};
 
 // Returns nearest pharmacy.  Takes start point (long/lat) and pharmacies array object.
 const nearestPharmacy = (point, pharmacies) => {
     return pharmacies.sort((a, b) => {
-        return getDistance(point, getPoint(a)) - getDistance(point, getPoint(b))
-    })[0]
-}
+        return getDistance(point, getPoint(a)) - getDistance(point, getPoint(b));
+    })[0];
+};
 
 module.exports.getPoint = getPoint;
 module.exports.getDistance = getDistance;

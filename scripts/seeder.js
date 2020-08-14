@@ -1,9 +1,9 @@
 const neatCsv = require('neat-csv');
 const fs = require('fs');
 const Pharmacy = require('../model/Pharmacy');
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-const { seederValidation } = require('../helpers/validation')
+const { seederValidation } = require('../helpers/validation');
 
 const seedDatabase = async() => {
     //.env file
@@ -31,14 +31,14 @@ const seedDatabase = async() => {
                     latitude: Number(data.latitude),
                     longitude: Number(data.longitude)
                 });
-                const savedUser = await pharmacy.save();
-                console.log("Seeded to database: " + pharmacy.name)
+                await pharmacy.save();
+                console.log("Seeded to database: " + pharmacy.name);
             } catch (err) {
-                console.log("Failed to seed while saving to the database: " + err)
+                console.log("Failed to seed while saving to the database: " + err);
             }
         }));
         await mongoose.disconnect();
-        console.log("Disconnected from database.")
+        console.log("Disconnected from database.");
     })
 };
 

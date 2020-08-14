@@ -46,7 +46,7 @@ const evalPharmacy = {
     state: "KS",
     zip: "66204",
     distance: 1
-}
+};
 
 const mockResponse = () => {
     const res = {};
@@ -66,12 +66,12 @@ describe('getNearest', () => {
         await getNearest(reqErrLat, res);
         expect(res.status).toHaveBeenCalledWith(400);
         expect(res.send).toHaveBeenCalledWith(VALIDATION_LAT_ERROR);
-    })
+    });
     test('Should fail latitude validation.', async() => {
         await getNearest(reqErrLon, res);
         expect(res.status).toHaveBeenCalledWith(400);
         expect(res.send).toHaveBeenCalledWith(VALIDATION_LON_ERROR);
-    })
+    });
     test('Should return a response with status 200 and pharmacy object', async() => {
         nearestPharmacy.mockReturnValue(pharmacy);
         getDistance.mockReturnValue(1);
@@ -80,5 +80,5 @@ describe('getNearest', () => {
         await getNearest(req, res);
         expect(res.status).toHaveBeenCalledWith(200);
         expect(res.send).toHaveBeenCalledWith(evalPharmacy);
-    })
+    });
 });

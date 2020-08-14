@@ -1,6 +1,6 @@
 const { getPoint, getDistance, nearestPharmacy } = require('../helpers/distanceHelper');
 const Pharmacy = require('../model/Pharmacy');
-const { getDistanceValidation } = require("../helpers/validation");
+const { getDistanceValidation } = require('../helpers/validation');
 
 const getNearest = async(req, res) => {
     const { error } = getDistanceValidation(req.body);
